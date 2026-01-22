@@ -9,11 +9,10 @@ public class CountWordsInString {
         String[] strArr = str.split(" ");
         System.out.println("number of words in provided sentence is "+strArr.length);
 
-        for(int i = 0; i < strArr.length; i++) {
-            strArr[i] = new StringBuilder(strArr[i]).reverse().toString();
-        }
-
-        String result = String.join(" ", strArr);
-        System.out.println(result);
+        //reverse each word in sentence
+        String revString = Arrays.stream(str.split(" "))
+                .map(s -> new StringBuilder(s).reverse())
+                .collect(Collectors.joining(" "));
+        System.out.println(revString);
     }
 }

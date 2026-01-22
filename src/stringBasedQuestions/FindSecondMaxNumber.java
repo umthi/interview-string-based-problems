@@ -9,7 +9,7 @@ public class FindSecondMaxNumber {
 
     private static int findSecondMaxNumber(int[] arr) {
         int max = arr[0];
-        int secondMax = arr[0];  // don't go with 0 will not work for negative values
+        int secondMax = Integer.MIN_VALUE;  // don't go with 0 will not work for negative values, arr[0] will not work for positive values
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > max) {  // only with this condition we cant get o/p when max value is the 1st elt
                 secondMax = max;
